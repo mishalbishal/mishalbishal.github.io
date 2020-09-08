@@ -1,0 +1,34 @@
+---
+layout: post
+title:  "Aliases"
+date:   2014-01-19 00:00:00 -0400
+---
+Note: This post was imported from a previous blog site.
+
+Aliases make us more efficient. An alias is a nickname for another command on the unix shell. Here give it a try! Note: I’ve only used aliases on my Mac and the Fedora-based CS50 appliance that I had to use for coursework, so please bear with me if you’re using a PC.
+```
+alias hello='echo "hello to you to!"'
+```
+Now whenever you type hello on your command line, your machine will say hello back to you! Now you may have noticed that after closing the window your hello alias no longer works. This is because any aliases that you create on the fly are temporary. In order to have aliases persist in between sessions you need some additional steps (not too many). Create a file called .bash_profile (notice the dot before the b) in your home directory. You can get to your home directory by typing either of these commands.
+```
+cd or cd ~
+```
+In your .bash_profile file add the following line:
+```
+alias hello='echo "hello to you to!"'
+```
+Now the alias will work in every shell session that you begin. You can set up other useful aliases. Here are some that make navigation easier:
+
+```
+# or another place that you frequent via the command line
+alias desktop='cd ~/Desktop'
+```
+```
+# less typing to ssh into a remote server
+alias bluehost='ssh username@mishalrahman.com'
+```
+How does this actually work? The .bash_profile is sourced every time you open up a new shell window. By placing aliases into your .bash_profile you’re bypassing the need to redeclare all the aliases for every shell session. This explains why new edits to the .bash_profile doesn’t affect the currently open windows that are running. In order to get the new aliases (or functions) you can source the new file then and there using:
+```
+source ~/.bash_profile
+```
+Give aliases a try and see the levels of creativity that you can achieve.
