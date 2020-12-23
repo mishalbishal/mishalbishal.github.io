@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2020-12-23T20:35:01+00:00</updated><id>/feed.xml</id><title type="html">Mishal Rahman</title><subtitle>Mishal Rahman's portfolio and blog.</subtitle><entry><title type="html">Mindshift summary</title><link href="/learning/2020/12/23/mindshift.html" rel="alternate" type="text/html" title="Mindshift summary" /><published>2020-12-23T20:00:00+00:00</published><updated>2020-12-23T20:00:00+00:00</updated><id>/learning/2020/12/23/mindshift</id><content type="html" xml:base="/learning/2020/12/23/mindshift.html">&lt;p&gt;We can understand and influence how we think. That’s an amazing ability because thinking is who we are and determines what we are capable of.
+In this page, I’ve summarized the notes from the &lt;a href=&quot;https://www.coursera.org/learn/mindshift&quot;&gt;Mindshift&lt;/a&gt; course.&lt;/p&gt;
+
+&lt;p&gt;These are the most important actionable aspects in my opinion.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Reading&lt;/li&gt;
+  &lt;li&gt;Increase motivation by increasing the perceived value of something.&lt;/li&gt;
+  &lt;li&gt;Assign labels to negative feelings&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;internal-influences-to-thinking&quot;&gt;Internal influences to thinking&lt;/h1&gt;
+
+&lt;script src=&quot;/assets/mermaid.min.js&quot;&gt;&lt;/script&gt;
+&lt;div class=&quot;mermaid&quot;&gt;
+graph LR
+    T(Thinking) --influenced by --- Feelings
+    T --improved by --- I2[Meditation]
+    T --faster by--- I3[Prioritization]
+
+    Feelings --- Feeling3 &amp;amp; Feeling1 &amp;amp; Feeling2
+    Feeling1[Points of view]
+    Feeling2[Don't get too comfortable]
+    Feeling3[Label feelings to better understand them]
+    I2 --- Meditation1 &amp;amp; Meditation2
+    Meditation1[Focused attention]
+    Meditation2[Open Monitoring]
+    I3 --- Prioritization1 &amp;amp; Prioritization2
+    Prioritization1[Motivation = Expectancy + Value - Impulsiveness]
+    Prioritization2[Selective ignorance]
+&lt;/div&gt;
+
+&lt;p&gt;Label feelings to better understand them&lt;/p&gt;
+
+&lt;p&gt;The emotion center of our brain (the amygdala) is not rational. You can use a technique called labeling to rein in
+emotions and become a Jedi master. Or at least, better rationalize and think about a situation. It’s helpful to
+memorize and understand these labels.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;All or nothing thinking&lt;/li&gt;
+  &lt;li&gt;Magnification&lt;/li&gt;
+  &lt;li&gt;Over generalization&lt;/li&gt;
+  &lt;li&gt;Mental filter&lt;/li&gt;
+  &lt;li&gt;Discounting the positive&lt;/li&gt;
+  &lt;li&gt;Jumping to conclusions&lt;/li&gt;
+  &lt;li&gt;Emotional reasoning&lt;/li&gt;
+  &lt;li&gt;Shouldy thinking&lt;/li&gt;
+  &lt;li&gt;Pejoratives&lt;/li&gt;
+  &lt;li&gt;Personalization and blame&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Point of view matters&lt;/p&gt;
+
+&lt;p&gt;How we feel about a topic is super important. We’re not really rational creatures, so being able to understand different
+points of view will allow us to empathize with more people. How you think about a situation matters. Sometimes your worst traits can be your BEST traits.&lt;/p&gt;
+
+&lt;p&gt;Don’t get too comfortable&lt;/p&gt;
+
+&lt;p&gt;Learning novel things may contribute to brain health as people age. It’s also makes for a more enjoyable life. Easy ways to try new things are to travel and read.&lt;/p&gt;
+
+&lt;p&gt;Meditation&lt;/p&gt;
+
+&lt;p&gt;Meditation has various forms focused and open monitoring. These …seem… to correspond to our brain modes of focused and diffuse.
+Types of focused meditation to try: breath or mantra meditation
+Types of open-monitoring meditation: keep aware of your surroundings.&lt;/p&gt;
+
+&lt;p&gt;Prioritization&lt;/p&gt;
+
+&lt;p&gt;We prioritize things that we value or that are pleasant to do. And we can get distracted while doing them. You can adjust your preceived value or expectation to increase your motivation to do that thing. This is discussed in more detail in this &lt;a href=&quot;https://alexvermeer.com/getmotivated/&quot;&gt;blog post by Alex Vermeer&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h1 id=&quot;external-influences-to-thinking&quot;&gt;External influences to thinking&lt;/h1&gt;
+
+&lt;script src=&quot;/assets/mermaid.min.js&quot;&gt;&lt;/script&gt;
+&lt;div class=&quot;mermaid&quot;&gt;
+graph LR
+    T2(Thinking External) --- E1[Learning] &amp;amp; E2[People]
+    E1 --- Learning1 &amp;amp; Learning2 &amp;amp; Learning3
+    Learning1[Brain health]
+    Learning2[Tracking Trends]
+    Learning2 --- Courses &amp;amp; Reading &amp;amp; Conferences
+
+    Learning3[Soft skills] --- Management &amp;amp; Creativity &amp;amp; Communication
+
+    E2 --- Mentors
+&lt;/div&gt;
+
+&lt;h2 id=&quot;learning&quot;&gt;Learning&lt;/h2&gt;
+
+&lt;p&gt;Learning helps to stimulate your brain and keep it healty. Keep exercising and trying new experiences. However, don’t get carried away trying to learn everything. One way of making sure that you’re not getting carried away is if you are continuing to create something from your learning.&lt;/p&gt;
+
+&lt;h3 id=&quot;invest-in-soft-skills&quot;&gt;Invest in soft skills&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Creativity:&lt;/li&gt;
+  &lt;li&gt;Management skills:&lt;/li&gt;
+  &lt;li&gt;Communciation skills: Writing, Speaking&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;keep-track-of-trends&quot;&gt;Keep track of trends&lt;/h3&gt;
+
+&lt;p&gt;You can keep track of trends in society or your specific fields of interest by reading books, journal articles, and the news. Attending conferences is a good way of also doing this and meeting people.&lt;/p&gt;
+
+&lt;h2 id=&quot;people&quot;&gt;People&lt;/h2&gt;
+
+&lt;p&gt;Who you are around affects how you live. Expand your network and find mentors that inspire you.&lt;/p&gt;</content><author><name></name></author><summary type="html">We can understand and influence how we think. That’s an amazing ability because thinking is who we are and determines what we are capable of. In this page, I’ve summarized the notes from the Mindshift course.</summary></entry><entry><title type="html">Learning how to learn</title><link href="/learning/2020/10/20/learning-how-to-learn.html" rel="alternate" type="text/html" title="Learning how to learn" /><published>2020-10-20T04:00:00+00:00</published><updated>2020-10-20T04:00:00+00:00</updated><id>/learning/2020/10/20/learning-how-to-learn</id><content type="html" xml:base="/learning/2020/10/20/learning-how-to-learn.html">&lt;p&gt;I took an online course on coursera at the end of 2019 entitled, &lt;a href=&quot;https://www.coursera.org/learn/learning-how-to-learn&quot;&gt;“Learning how to learn.”&lt;/a&gt; It was an enlightening course full of new techniques for lifelong learning. There is a sequel course that I plan to take, &lt;a href=&quot;https://www.coursera.org/learn/mindshift/&quot;&gt;Mindshift&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;One of the strategies that the course discusses is distributed practice. That is, spreading out learning over a longer period of time, this allows us to have a greater grasp of the material by elevating the importance of this chunk of information in our brains. By repeatedly accessing this information, we strengthen the neurons in our brains associated with those memories. This kind of seems like obvious knowledge, but yeah, I needed to be told it. I currently use my daylight list app in order to keep track of when to review this course, approx. every month.&lt;/p&gt;
+
+&lt;p&gt;For faciliating my monthly reviews, I’m making this summary available online. And if any intrepid soul ventures here, they might also pick something up.&lt;/p&gt;
+
+&lt;p&gt;For my summary of the course, I emphasized three parts.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;the current understanding of how our brain works.&lt;/li&gt;
+  &lt;li&gt;beneficial techniques for habits and everyday life.&lt;/li&gt;
+  &lt;li&gt;learning techniques for quickly comprehending a topic and retaining that knowledge.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;how-our-brain-works&quot;&gt;How our brain works&lt;/h2&gt;
+&lt;p&gt;Our brain functions in two modes &lt;em&gt;focused&lt;/em&gt; and &lt;em&gt;diffuse&lt;/em&gt; mode. Focused mode is when we are actively working on something with our conscious attention. Diffuse mode on the other hand is the subconscious processing that our brain does when we are not actively doing something. It is a combination of focused mode to import information and diffuse mode packaging the information that helps us develop &lt;em&gt;chunks&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Chunks are groups of neurons that fire together. There are thought to be four working memory slots in our brain. We can load chunks into these memory slots. Having larger chunks means we can have a larger working memory. To create larger chunks we need to develop a deeper understanding of material. Chunks form from focused attention -&amp;gt; understanding -&amp;gt; practice.&lt;/p&gt;
+
+&lt;p&gt;A brief mention of habits. Habits can be broken down into cue -&amp;gt; routine -&amp;gt; reward -&amp;gt; belief. To change or create a habit, we can focus on identifying the cue and apply willpower to change the established routine. By strategically applying willpower to identifying the cue and changing the routine, we can start to change or create a habit. To reinforce the habit, we need to reward ourselves.&lt;/p&gt;
+
+&lt;p&gt;Procrastination typically happens because we are focused on the end product. Instead, it is better to focus on the process of creating or doing. By focusing on the process, we become closer to creating something without being overwhelmed thinking of what we will eventually have.&lt;/p&gt;
+
+&lt;h2 id=&quot;beneficial-techniques&quot;&gt;Beneficial techniques&lt;/h2&gt;
+&lt;p&gt;A large part of changing the outcome is to change our perceptions. Some strategies are:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Explore your interests and read (auto-)biographies to learn from others.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Take notes: inspirations strike at odd times, remember your inspirations.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Re-frame bodily responses: instead of “I’m stressed/angry” think “I’m excited”&lt;/li&gt;
+  &lt;li&gt;Rephrase “I have to do this” with “I get to do this”&lt;/li&gt;
+  &lt;li&gt;If your worst possible situation is managed by a “Plan B”, then there isn’t much to fear is there.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;learning-techniques&quot;&gt;Learning techniques&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;interleaving&lt;/em&gt;: Our mind can get tired thinking of one topic for an extended period of time. Instead, consider working on different topics.&lt;/li&gt;
+  &lt;li&gt;summarize: Writing a summary can force our brain to understand a topic. This is similar to teaching others.&lt;/li&gt;
+  &lt;li&gt;teach others: You can identify areas of lacking in knowledge by monitoring when you start getting vague in your explanations when teaching others.&lt;/li&gt;
+  &lt;li&gt;learning to deal with failure: learn from failures, they are inevitable, and move on from them.&lt;/li&gt;
+  &lt;li&gt;make it concrete: Visualizing or creating analogies increases the likelihood of remembering something.&lt;/li&gt;
+  &lt;li&gt;group learning: useful for getting exposure to varied POVs, however, everyone has to be punctual and stay on track.&lt;/li&gt;
+  &lt;li&gt;solo learning: necessary to personally engage with the material.&lt;/li&gt;
+  &lt;li&gt;try new things: lady luck favors the bold!&lt;/li&gt;
+  &lt;li&gt;pomodoro: Short focused 25 minute sessions followed by 5 minutes break.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;taking a break: This prevents frustration and illusions of competence. It also engages the diffuse mode of your brain.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;recall: Immediately after reading something, attempt to remember what was read. This surprisingly solidifies the information in our brain.&lt;/li&gt;
+  &lt;li&gt;deliberate practice: Practice what you find difficult, so that you get better at it.&lt;/li&gt;
+  &lt;li&gt;avoid illusions of competence: Sometimes if we are working on easy tasks for a period of time, we can unrealistically believe that we’re good at it. Avoid this using deliberate practice and distributed practice.&lt;/li&gt;
+  &lt;li&gt;distributed practice: Spread out practice over time, so that we can avoid illusions of competence and facilitate chunk formation.&lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">I took an online course on coursera at the end of 2019 entitled, “Learning how to learn.” It was an enlightening course full of new techniques for lifelong learning. There is a sequel course that I plan to take, Mindshift.</summary></entry><entry><title type="html">Chess openings visualization using d3.js</title><link href="/projects/2020/09/07/revisiting-chess-openings-project.html" rel="alternate" type="text/html" title="Chess openings visualization using d3.js" /><published>2020-09-07T15:12:00+00:00</published><updated>2020-09-07T15:12:00+00:00</updated><id>/projects/2020/09/07/revisiting-chess-openings-project</id><content type="html" xml:base="/projects/2020/09/07/revisiting-chess-openings-project.html">&lt;p&gt;The &lt;a href=&quot;https://mishalbishal.github.io/cs171-project2/&quot;&gt;Chess Openings Visualization&lt;/a&gt;
+is a group project that I made with Keoni Correa for a visualization course back in college. We were both interested in chess and saw this as an opportunity to learn the d3 visualization library while exploring a shared interest.&lt;/p&gt;
+
+&lt;p&gt;If you haven’t used d3 before, you can &lt;a href=&quot;https://d3js.org&quot;&gt;peruse the github repo&lt;/a&gt;. I’ve put a short summary here as well: To create visualizations in the browser you need to manage some way of having your data create and interact with html elements. Other charts libraries allow you to input the data in their proscribed format and either hit an API to create an image or use Javascript to create the charts for you. D3 is a lower level library in that it does not abstract as much of the visualization creation process away from the user. On the bright side, this means that there is a greater deal of flexibility in what to create.&lt;/p&gt;
+
+&lt;p&gt;The d3 library acts as a glue so that you don’t have to manually manage the connections between your data (in whatever format you choose, unlike inflexible visualization libraries) and the rendered html elements. There are numerous tutorials for using d3 and they are very comprehensive. The best starting point is probably to visit &lt;a href=&quot;https://d3js.org/&quot;&gt;d3’s github repo&lt;/a&gt; and read through the introductory examples and try tweaking them to your own use case.&lt;/p&gt;
+
+&lt;p&gt;d3 is a large library and it can be overwhelming to start using it. The good thing is that there are numerous examples available to peruse and learn from at the &lt;a href=&quot;https://bl.ocks.org/&quot;&gt;https://bl.ocks.org/&lt;/a&gt; website and the &lt;a href=&quot;https://observablehq.com/@d3/gallery&quot;&gt;d3 gallery at observablehq.com&lt;/a&gt;.&lt;/p&gt;</content><author><name></name></author><summary type="html">The Chess Openings Visualization is a group project that I made with Keoni Correa for a visualization course back in college. We were both interested in chess and saw this as an opportunity to learn the d3 visualization library while exploring a shared interest.</summary></entry><entry><title type="html">Aliases</title><link href="/2014/01/19/aliases.html" rel="alternate" type="text/html" title="Aliases" /><published>2014-01-19T04:00:00+00:00</published><updated>2014-01-19T04:00:00+00:00</updated><id>/2014/01/19/aliases</id><content type="html" xml:base="/2014/01/19/aliases.html">&lt;p&gt;Note: This post was imported from a previous blog site.&lt;/p&gt;
+
+&lt;p&gt;Aliases make us more efficient. An alias is a nickname for another command on the unix shell. Here give it a try! Note: I’ve only used aliases on my Mac and the Fedora-based CS50 appliance that I had to use for coursework, so please bear with me if you’re using a PC.&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;alias hello='echo &quot;hello to you to!&quot;'
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Now whenever you type hello on your command line, your machine will say hello back to you! Now you may have noticed that after closing the window your hello alias no longer works. This is because any aliases that you create on the fly are temporary. In order to have aliases persist in between sessions you need some additional steps (not too many). Create a file called .bash_profile (notice the dot before the b) in your home directory. You can get to your home directory by typing either of these commands.&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;cd or cd ~
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;In your .bash_profile file add the following line:&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;alias hello='echo &quot;hello to you to!&quot;'
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Now the alias will work in every shell session that you begin. You can set up other useful aliases. Here are some that make navigation easier:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# or another place that you frequent via the command line
+alias desktop='cd ~/Desktop'
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# less typing to ssh into a remote server
+alias bluehost='ssh username@mishalrahman.com'
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;How does this actually work? The .bash_profile is sourced every time you open up a new shell window. By placing aliases into your .bash_profile you’re bypassing the need to redeclare all the aliases for every shell session. This explains why new edits to the .bash_profile doesn’t affect the currently open windows that are running. In order to get the new aliases (or functions) you can source the new file then and there using:&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;source ~/.bash_profile
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Give aliases a try and see the levels of creativity that you can achieve.&lt;/p&gt;</content><author><name></name></author><summary type="html">Note: This post was imported from a previous blog site.</summary></entry><entry><title type="html">Biased Coin</title><link href="/2014/01/19/biased-coin.html" rel="alternate" type="text/html" title="Biased Coin" /><published>2014-01-19T04:00:00+00:00</published><updated>2014-01-19T04:00:00+00:00</updated><id>/2014/01/19/biased-coin</id><content type="html" xml:base="/2014/01/19/biased-coin.html">&lt;p&gt;Note: This post was imported from a previous blog site.&lt;/p&gt;
+
+&lt;p&gt;This problem has come up often recently: if you have an biased coin that lands on heads more than it does on tails, can you use that coin in order to simulate a fair coin? So basically, use the coin and achieve the same effect as if you had a fair coin.&lt;/p&gt;
+
+&lt;p&gt;The first time I saw this question was during a mock technology interview that my school’s Office of Career Services provided. Then it showed up in class today, as I was shopping an Algorithms class (CS124). How can you possibly answer this question? Why not give it a go before reading the next couple of paragraphs?&lt;/p&gt;
+
+&lt;p&gt;The coin has a bias and we can say that this bias is &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;P&lt;/code&gt;, so the probability of landing on heads is &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;P&lt;/code&gt;. The probability of landing on tails is &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;(1-P)&lt;/code&gt;. Now I had originally thought of trying to find &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;P&lt;/code&gt; and then compensate based on &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;P&lt;/code&gt;’s value in order to get a fair way of using this coin. However, there is another way without actually figuring out what the value of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;P&lt;/code&gt; is:&lt;/p&gt;
+
+&lt;p&gt;Instead of just tossing the biased coin once, toss it more than one times (here I’ll do two tosses). Here’s the probabilities of the 4 possible outcomes for two tosses:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Heads, then Tails -&amp;gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;P*(1-P)&lt;/code&gt;. &lt;em&gt;The probability of this is &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;P*(1-P)&lt;/code&gt;. This is because the probability of flipping heads is &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;P&lt;/code&gt; and the probability of flipping tails is &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;(1-P)&lt;/code&gt;, so overall the probability of the two is &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;P times (1-P)&lt;/code&gt;.&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;Tails, Head -&amp;gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;(1-P)*(P)&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Head, Head -&amp;gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;(P)*(P)&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Tail, Tail -&amp;gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;(T)*(T)&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Notice how the probability of the 1st and 2nd outcome is the same! &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;P*(1-P)&lt;/code&gt; is the same as &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;(1-P)*P&lt;/code&gt;. Because the probability of getting Head then Tail is the same as getting Tail and then Head, you can use this equal probability in order to simulate a fair coin. Let the Head, Tail case be called “Heads” and the Tail, Head case be called “Tails”. The other two outcomes 3. Head, Head and 4. Tail, Tail can be ignored.&lt;/p&gt;
+
+&lt;p&gt;So in order to simulate a fair coin, flip the unbiased coin twice. If you get the Head,Tail pair then consider that as “Heads” and if you get the Tail,Head pair consider that “Tails.” If you don’t get either of these two, repeat until you do. And there you have it! A way of getting fair outcomes from a biased coin.&lt;/p&gt;
+
+&lt;p&gt;From the interviewer, I learned how to prove that this method worked to provide a fair coin simulator. In class, there was a discussion of improvements to this method. I won’t talk about those things here, but still isn’t it cool how you can solve the problem of the biased coin in this way?&lt;/p&gt;</content><author><name></name></author><summary type="html">Note: This post was imported from a previous blog site.</summary></entry></feed>
