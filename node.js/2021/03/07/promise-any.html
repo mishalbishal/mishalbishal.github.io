@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Zombie threads in Promise.any | Mishal Rahman</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Zombie threads in Promise.any" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Promise.race and the newer Promise.any solve the problem of using the first completed promise from among a set of promises. The difference between race and any is that race returns on the first result (even if it is an error) and any returns on the first success while ignoring errors. I’ll refer to Promise.any for the duration of this post to limit verbosity, but similar thoughts apply to Promise.race as well. An example use case for Promise.any is to download from multiple sources and use the first successfully fetched resource. The Mozilla documentation shows an example of fetching images. The documention also says of Promise.any:" />
+<meta property="og:description" content="Promise.race and the newer Promise.any solve the problem of using the first completed promise from among a set of promises. The difference between race and any is that race returns on the first result (even if it is an error) and any returns on the first success while ignoring errors. I’ll refer to Promise.any for the duration of this post to limit verbosity, but similar thoughts apply to Promise.race as well. An example use case for Promise.any is to download from multiple sources and use the first successfully fetched resource. The Mozilla documentation shows an example of fetching images. The documention also says of Promise.any:" />
+<link rel="canonical" href="/node.js/2021/03/07/promise-any.html" />
+<meta property="og:url" content="/node.js/2021/03/07/promise-any.html" />
+<meta property="og:site_name" content="Mishal Rahman" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-03-07T14:00:00+00:00" />
+<script type="application/ld+json">
+{"description":"Promise.race and the newer Promise.any solve the problem of using the first completed promise from among a set of promises. The difference between race and any is that race returns on the first result (even if it is an error) and any returns on the first success while ignoring errors. I’ll refer to Promise.any for the duration of this post to limit verbosity, but similar thoughts apply to Promise.race as well. An example use case for Promise.any is to download from multiple sources and use the first successfully fetched resource. The Mozilla documentation shows an example of fetching images. The documention also says of Promise.any:","headline":"Zombie threads in Promise.any","dateModified":"2021-03-07T14:00:00+00:00","datePublished":"2021-03-07T14:00:00+00:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"/node.js/2021/03/07/promise-any.html"},"url":"/node.js/2021/03/07/promise-any.html","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Mishal Rahman" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Mishal Rahman</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About Me</a><a class="page-link" href="/"></a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Zombie threads in Promise.any</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2021-03-07T14:00:00+00:00" itemprop="datePublished">Mar 7, 2021
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/race">Promise.race</a> and the newer <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/any">Promise.any</a> solve the problem of using the first completed promise from among a set of promises. The difference between <code class="language-plaintext highlighter-rouge">race</code> and <code class="language-plaintext highlighter-rouge">any</code> is that <code class="language-plaintext highlighter-rouge">race</code> returns on the first result (even if it is an error) and <code class="language-plaintext highlighter-rouge">any</code> returns on the first success while ignoring errors. I’ll refer to Promise.any for the duration of this post to limit verbosity, but similar thoughts apply to Promise.race as well. An example use case for Promise.any is to download from multiple sources and use the first successfully fetched resource. The <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/any#displaying_the_first_image_loaded">Mozilla documentation</a> shows an example of fetching images. The documention also says of Promise.any:</p>
+
+<p>“It short-circuits after a promise fulfills, so it does not wait for the other promises to complete once it finds one.”</p>
+
+<p>What are the side effects of Promise.any not waiting for the other promises to complete. What happens to those other threads of execution, since their result will be ignored. Do they continue to run? Is there some optimization in various engines for not executing promises once the first result is retrieved.</p>
+
+<p>It turns out that for node.js, and so for the v8 engine, as of Feb 2021, there isn’t anything done with the non-fulfilled threads to stop them, i.e. <em>they continue to run in the background, but their results are ignored</em>. I think of them as zombie threads (this might not exactly be the correct term) that are using up system resources. For example, in <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/any#displaying_the_first_image_loaded">the loading images sample code listed in the Mozilla docs</a>, if one of the image servers was hanging and there wasn’t a short timeout specified, then loading that image ends up using up a Browser’s limited connection slot. The <a href="https://blog.fullstacktraining.com/concurrent-http-connections-in-node-js/">number of connections allowed in browsers is limited</a>  (most browsers allow 6 connections) and so it’s an important consideration when using Promise.any.</p>
+
+<h1 id="possible-solution-to-zombie-threads-when-fetching-http-resources">Possible solution to zombie threads when fetching http resources</h1>
+
+<p>For network requests used with Promise.any, you can use the <a href="https://github.com/axios/axios#cancellation">cancel feature of axios</a>.
+This way your program isn’t wasting resources fetching data that will be thrown out.
+Here is an example of a wrapper function, <code class="language-plaintext highlighter-rouge">withAnyResult</code>, that takes care of cancellation using axios’s cancel feature.</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">withAnyResult</span><span class="p">(</span><span class="nx">urls</span><span class="p">,</span> <span class="nx">callback</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">source</span> <span class="o">=</span> <span class="nx">axios</span><span class="p">.</span><span class="nx">CancelToken</span><span class="p">.</span><span class="nx">source</span><span class="p">();</span>
+    <span class="kd">const</span> <span class="nx">requests</span> <span class="o">=</span> <span class="nx">urls</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span>
+        <span class="nx">url</span> <span class="o">=&gt;</span> <span class="nx">axios</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="p">{</span>
+            <span class="na">cancelToken</span><span class="p">:</span> <span class="nx">source</span><span class="p">.</span><span class="nx">token</span>
+        <span class="p">})</span>
+    <span class="p">);</span>
+    <span class="nb">Promise</span><span class="p">.</span><span class="nx">race</span><span class="p">(</span><span class="nx">requests</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
+        <span class="cm">/* cancel can be called multiple times without issues.
+           This will make axios cancel any connections that
+           are still open. In this case, it'll cancel the
+           connection to the /sleep/25 url, which would have
+           continued to keep a connection alive for 25 seconds,
+           even after this promise was fulfilled.
+        */</span>
+        <span class="nx">source</span><span class="p">.</span><span class="nx">cancel</span><span class="p">(</span><span class="dl">"</span><span class="s2">Done</span><span class="dl">"</span><span class="p">);</span>
+        <span class="nx">callback</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+    <span class="p">});</span>
+<span class="p">}</span>
+
+<span class="cm">/* Note: In this example, I use the npm server from this
+   github repo to simulate delayed requests.
+   https://github.com/mishalbishal/promise-any-test
+*/</span>
+
+<span class="cm">/* The linked repo allows simulating a delayed request
+   by the parameter in the url. So this urls variable
+   contains three links, two of which take a second
+   and one which will take 25 seconds!
+*/</span>
+<span class="kd">const</span> <span class="nx">urls</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">25</span><span class="p">].</span><span class="nx">map</span><span class="p">((</span><span class="nx">num</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="s2">`http://localhost:3000/sleep/</span><span class="p">${</span><span class="nx">num</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+
+<span class="nx">withAnyResult</span><span class="p">(</span><span class="nx">urls</span><span class="p">,</span> <span class="p">(</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+<span class="p">});</span></code></pre></figure>
+
+<p>Feel free to clone and play around with this repo <a href="https://github.com/mishalbishal/promise-any-test">https://github.com/mishalbishal/promise-any-test</a> to explore further.</p>
+
+<p>If the promises are not http requests but some other computation. Then you’ll need to implement this cancel functionality yourself, possibly by having your Promises all periodically check a variable such as <code class="language-plaintext highlighter-rouge">hasRequestBeenCancelled</code> or <code class="language-plaintext highlighter-rouge">isAnyPromiseDone</code>. Anyway, that’s out of scope of this article because I don’t want to go into that rabbit hole.</p>
+
+<h1 id="conclusion">Conclusion</h1>
+
+<p>Promise.any and Promise.race provide a useful functionality. Users may want to take care of how they write their promises to prevent zombie threads using up cpu or network resources. Especially in browser-land where the connection limits are small. Use of the axios library’s cancel feature allows developers to prevent zombie threads when making http requests. However, even though axios cancels the processing on the browser, the server may continue to process the request until it hits its own timeout. Perhaps in the future Javascript implementations may consider some optimizations for Promise.any.</p>
+
+<h1 id="further-reading">Further reading</h1>
+<ul>
+  <li><a href="https://github.com/tc39/proposal-promise-any">Promise.any proposal for ES2021</a></li>
+  <li><a href="https://v8.dev/features/promise-combinators">Promise combinators in v8</a></li>
+  <li><a href="https://github.com/es-shims/Promise.any">Promise.any shim implementation</a>, <a href="https://github.com/m0ppers/promise-any/blob/master/index.js">the code</a>.</li>
+  <li><a href="https://bugs.chromium.org/p/v8/issues/detail?id=9808">v8 engine implementation of Promise.any</a></li>
+</ul>
+
+  </div><a class="u-url" href="/node.js/2021/03/07/promise-any.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Mishal Rahman</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1"><ul class="social-media-list"><li><a href="https://github.com/mishalbishal"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">mishalbishal</span></a></li><li><a href="https://www.linkedin.com/in/mishalrahman"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#linkedin"></use></svg> <span class="username">mishalrahman</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-1">
+        <p>Mishal Rahman&#39;s portfolio and blog.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
