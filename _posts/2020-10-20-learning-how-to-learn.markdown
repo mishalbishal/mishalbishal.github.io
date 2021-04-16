@@ -9,7 +9,7 @@ I took an online course on coursera at the end of 2019 entitled, ["Learning how 
 
 One of the strategies that the course discusses is distributed practice. That is, spreading out learning over a longer period of time, this allows us to have a greater grasp of the material by elevating the importance of this chunk of information in our brains. By repeatedly accessing this information, we strengthen the neurons in our brains associated with those memories. This kind of seems like obvious knowledge, but yeah, I needed to be told it. I currently use my daylight list app in order to keep track of when to review this course, approx. every month.
 
-For faciliating my monthly reviews, I'm making this summary available online. And if any intrepid soul ventures here, they might also pick something up.
+For facilitating my monthly reviews, I'm making this summary available online. And if any intrepid soul ventures here, they might also pick something up.
 
 For my summary of the course, I emphasized three parts.
 * the current understanding of how our brain works.

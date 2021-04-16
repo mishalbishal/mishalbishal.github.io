@@ -66,7 +66,7 @@ Types of open-monitoring meditation: keep aware of your surroundings.
 
 Prioritization
 
-We prioritize things that we value or that are pleasant to do. And we can get distracted while doing them. You can adjust your preceived value or expectation to increase your motivation to do that thing. This is discussed in more detail in this [blog post by Alex Vermeer](https://alexvermeer.com/getmotivated/).
+We prioritize things that we value or that are pleasant to do. And we can get distracted while doing them. You can adjust your perceived value or expectation to increase your motivation to do that thing. This is discussed in more detail in this [blog post by Alex Vermeer](https://alexvermeer.com/getmotivated/).
 
 # External influences to thinking
 
@@ -85,13 +85,13 @@ graph LR
 
 ## Learning
 
-Learning helps to stimulate your brain and keep it healty. Keep exercising and trying new experiences. However, don't get carried away trying to learn everything. One way of making sure that you're not getting carried away is if you are continuing to create something from your learning.
+Learning helps to stimulate your brain and keep it healthy. Keep exercising and trying new experiences. However, don't get carried away trying to learn everything. One way of making sure that you're not getting carried away is if you are continuing to create something from your learning.
 
 ### Invest in soft skills
 
 * Creativity: 
 * Management skills: 
-* Communciation skills: Writing, Speaking
+* Communication skills: Writing, Speaking
 
 ### Keep track of trends
 
